@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Detail - Empowering The Nation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f3e8ff, #e9d5ff);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 10px 0;
+      color: black;
+    }
+    h2, h3 {
+      margin-top: 20px;
+      color: black;
+    }
+    p, li, span {
+      color: #444;
+    }
+    .course-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+    .price {
+      color: purple;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-purple {
+      background: purple;
+      color: white;
+    }
+    .btn-purple:hover {
+      background: #6a0dad;
+    }
+    .btn-gold {
+      background: gold;
+      color: black;
+    }
+    .btn-outline {
+      border: 2px solid purple;
+      background: white;
+      color: purple;
+    }
+    .btn-outline:hover {
+      background: #f5e6ff;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 15px;
+      cursor: pointer;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="back" onclick="window.location.href='courses.html'">← Back to Courses</span>
+    <div class="card">
+      <img id="courseImage" src="" alt="Course Image">
+      <div class="card-content">
+        <h1 id="courseTitle">Course Title</h1>
+        <div class="course-meta">
+          <span id="courseDuration"></span>
+          <span class="price" id="coursePrice"></span>
+        </div>
+        <button id="selectCourseBtn" class="btn btn-purple">Select Course</button>
+
+        <h2>Course Description</h2>
+        <p id="courseDescription"></p>
+
+        <h3>Modules</h3>
+        <ul id="courseModules"></ul>
+
+        <h3>Prerequisites</h3>
+        <p id="coursePrerequisites"></p>
+
+        <h3>Certification</h3>
+        <p id="courseCertification"></p>
+
+        <div class="actions">
+          <button class="btn btn-gold" onclick="goToCart()">View Cart (<span id="cartCount">0</span>)</button>
+          <button class="btn btn-outline" onclick="window.location.href='courses.html'">Back to Courses</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const courses = {
+      "first-aid": {
+        title: "First Aid",
+        duration: "6 months",
+        price: 1500,
+        image: "https://via.placeholder.com/800x350?text=First+Aid",
+        description: "Learn essential first aid skills to respond to medical emergencies.",
+        modules: [
+          "Basic Life Support (BLS)",
+          "Wound Care and Bleeding Control",
+          "Fractures and Sprains",
+          "Burns and Heat-Related Injuries",
+          "CPR and AED Training"
+        ],
+        prerequisites: "No prior experience required",
+        certification: "Nationally recognized First Aid Certificate"
+      },
+      "sewing": {
+        title: "Sewing",
+        duration: "6 months",
+        price: 1500,
+        image: "https://via.placeholder.com/800x350?text=Sewing",
+        description: "Master the art of sewing from basic stitches to advanced garment construction.",
+        modules: [
+          "Machine Operation",
+          "Basic Hand Stitching",
+          "Pattern Reading",
+          "Garment Construction",
+          "Alterations and Repairs"
+        ],
+        prerequisites: "No prior experience required",
+        certification: "Professional Sewing Certificate"
+      }
+      // You can add the other courses here...
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get("id");
+
+    const course = courses[courseId];
+    if (course) {
+      document.getElementById("courseImage").src = course.image;
+      document.getElementById("courseTitle").textContent = course.title;
+      document.getElementById("courseDuration").textContent = course.duration;
+      document.getElementById("coursePrice").textContent = "R" + course.price;
+      document.getElementById("courseDescription").textContent = course.description;
+      document.getElementById("coursePrerequisites").textContent = course.prerequisites;
+      document.getElementById("courseCertification").textContent = course.certification;
+
+      const modulesList = document.getElementById("courseModules");
+      course.modules.forEach(m => {
+        const li = document.createElement("li");
+        li.textContent = m;
+        modulesList.appendChild(li);
+      });
+    } else {
+      document.querySelector(".card-content").innerHTML = "<h1>Course not found</h1>";
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    document.getElementById("selectCourseBtn").addEventListener("click", function() {
+      if (!cart.some(c => c.id === courseId)) {
+        cart.push({ id: courseId, title: course.title, price: course.price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        this.textContent = "Selected ✓";
+        this.classList.remove("btn-purple");
+        this.classList.add("btn-gold");
+      }
+      document.getElementById("cartCount").textContent = cart.length;
+    });
+
+    function goToCart() {
+      window.location.href = "checkout.html";
+    }
+
+    // Show current cart count
+    document.getElementById("cartCount").textContent = cart.length;
+  </script>
+</body>
+</html>

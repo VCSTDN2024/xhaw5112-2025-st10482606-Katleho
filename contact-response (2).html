@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering The Nation - Message Sent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-900 to-black shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full overflow-hidden">
+                            <img src="media/logo.png" alt="Empowering The Nation Logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-white text-xl font-bold">Empowering The Nation</span>
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover:text-yellow-400 px-3 py-2 rounded-md transition-colors">Home</a>
+                    <a href="courses.html" class="text-white hover:text-yellow-400 px-3 py-2 rounded-md transition-colors">Courses</a>
+                    <a href="contact.html" class="text-white hover:text-yellow-400 px-3 py-2 rounded-md transition-colors">Contact</a>
+                </nav>
+
+                <!-- Cart Icon -->
+                <div class="flex items-center">
+                    <a href="enrollment.html" class="relative bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition-colors">
+                        <span class="mr-2">Enroll</span>
+                        <span id="cart-count" class="bg-purple-900 text-white text-xs rounded-full px-2 py-1 ml-2">0</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-yellow-400">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html" class="text-white hover:text-yellow-400 block px-3 py-2 rounded-md">Home</a>
+                    <a href="courses.html" class="text-white hover:text-yellow-400 block px-3 py-2 rounded-md">Courses</a>
+                    <a href="contact.html" class="text-white hover:text-yellow-400 block px-3 py-2 rounded-md">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Success Icon -->
+            <div class="bg-green-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8">
+                <svg class="w-12 h-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+            </div>
+
+            <!-- Thank You Message -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Thank You!
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8">
+                Your request has been sent successfully.
+            </p>
+
+            <!-- Details -->
+            <div class="bg-white rounded-lg shadow-md p-8 mb-8 text-left">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">What Happens Next?</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-900 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-sm font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Message Received</h3>
+                            <p class="text-gray-600">We have received your message and it has been forwarded to the appropriate team member.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-900 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-sm font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Response Time</h3>
+                            <p class="text-gray-600">We typically respond to inquiries within 24-48 hours during business days (Monday to Friday, 8AM - 5PM).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-900 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-sm font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Follow Up</h3>
+                            <p class="text-gray-600">You will receive a detailed response via email. Please check your spam folder if you don't see our reply.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="bg-purple-50 rounded-lg p-6 mb-8">
+                <h3 class="text-xl font-semibold text-purple-900 mb-4">Need Immediate Assistance?</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-purple-800">
+                    <div>
+                        <h4 class="font-medium mb-1">Phone Support</h4>
+                        <p class="text-sm">+27 11 123 4567</p>
+                        <p class="text-xs text-purple-600">Mon-Fri, 8AM - 5PM</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium mb-1">Email Support</h4>
+                        <p class="text-sm">info@empoweringthenation.co.za</p>
+                        <p class="text-xs text-purple-600">24/7 - We respond within 24-48 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-4">
+                <div class="space-x-4">
+                    <a href="courses.html" class="bg-purple-900 hover:bg-purple-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                        Browse Our Courses
+                    </a>
+                    <a href="contact.html" class="border-2 border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                        Send Another Message
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html" class="text-purple-600 hover:text-purple-800 font-medium">
+                        Return to Home Page
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQ Quick Links -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">Common Questions</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-left">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border">
+                        <h4 class="font-medium text-gray-900 mb-2">Course Schedule Information</h4>
+                        <p class="text-sm text-gray-600">Find details about course start dates, schedules, and duration.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border">
+                        <h4 class="font-medium text-gray-900 mb-2">Payment and Pricing</h4>
+                        <p class="text-sm text-gray-600">Learn about course fees, payment options, and available discounts.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border">
+                        <h4 class="font-medium text-gray-900 mb-2">Enrollment Process</h4>
+                        <p class="text-sm text-gray-600">Get step-by-step guidance on how to enroll in courses.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border">
+                        <h4 class="font-medium text-gray-900 mb-2">Certification Requirements</h4>
+                        <p class="text-sm text-gray-600">Understand what's needed to receive your course certificate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-purple-900 font-bold">ETN</span>
+                    </div>
+                    <span class="text-lg font-bold">Empowering The Nation</span>
+                </div>
+                <p class="text-gray-400 mb-4">Transforming lives through quality education and training.</p>
+                <div class="space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-yellow-400">Home</a>
+                    <a href="courses.html" class="text-gray-400 hover:text-yellow-400">Courses</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-yellow-400">Contact</a>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-800">
+                    <p class="text-gray-500">© 2024 Empowering The Nation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
