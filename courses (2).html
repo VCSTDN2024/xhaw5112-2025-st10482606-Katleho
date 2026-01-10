@@ -1,0 +1,274 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empowering The Nation - Courses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+
+<!-- Header -->
+<header class="bg-gradient-to-r from-purple-900 to-black shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full overflow-hidden">
+            <img src="media/logo.png" alt="Empowering The Nation Logo" class="w-full h-full object-cover">
+          </div>
+          <span class="text-white text-xl font-bold">Empowering The Nation</span>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-white hover:text-yellow-400 px-3 py-2 rounded-md transition-colors">Home</a>
+        <a href="courses.html" class="text-yellow-400 px-3 py-2 rounded-md transition-colors">Courses</a>
+        <a href="contact.html" class="text-white hover:text-yellow-400 px-3 py-2 rounded-md transition-colors">Contact</a>
+      </nav>
+
+      <!-- Cart Icon -->
+      <div class="flex items-center">
+        <a href="payment.html" class="relative bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition-colors">
+          <span class="mr-2">Enroll</span>
+          <span id="cart-count" class="bg-purple-900 text-white text-xs rounded-full px-2 py-1 ml-2">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Page Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Training Courses</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Choose from our comprehensive training programs designed to empower you with essential skills for personal and professional growth.
+      </p>
+    </div>
+
+    <!-- Course Selection Summary -->
+    <div id="course-summary" class="bg-white rounded-lg shadow-md p-6 mb-8 hidden">
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">Selected Courses</h3>
+      <div id="selected-courses-list" class="space-y-2 mb-4"></div>
+      <div class="border-t pt-4 space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="font-semibold">Subtotal:</span>
+          <span id="subtotal-amount">R0</span>
+        </div>
+        <div class="flex justify-between items-center text-green-700 font-semibold" id="discount-row" style="display:none;">
+          <span>Discount:</span>
+          <span id="discount-amount">-R0</span>
+        </div>
+        <div class="flex justify-between items-center text-lg font-bold">
+          <span>Total:</span>
+          <span id="total-amount">R0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Courses Grid -->
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Child Minding -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+        <img src="media/child-minding.jpg" alt="Child Minding" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Child Minding</h3>
+        <p class="text-gray-600 mb-4">Learn childcare basics, safety, and educational play techniques.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">6 months</span>
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm ml-2">R1,500</span>
+        </div>
+        <button class="course-btn w-full bg-purple-900 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="child-minding" 
+          data-title="Child Minding" 
+          data-price="1500">
+          Add to Selection
+        </button>
+      </div>
+
+      <!-- Cooking -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+        <img src="media/cooking.jpg" alt="Cooking" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Cooking</h3>
+        <p class="text-gray-600 mb-4">Master culinary techniques and nutrition to create delicious meals.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">6 weeks</span>
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm ml-2">R750</span>
+        </div>
+        <button class="course-btn w-full bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="cooking" 
+          data-title="Cooking" 
+          data-price="750">
+          Add to Selection
+        </button>
+      </div>
+
+      <!-- Landscaping -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+        <img src="media/landscaping.jpeg" alt="Landscaping" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Landscaping</h3>
+        <p class="text-gray-600 mb-4">Design and maintain outdoor spaces with professional landscaping skills.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">6 months</span>
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm ml-2">R1,500</span>
+        </div>
+        <button class="course-btn w-full bg-purple-900 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="landscaping" 
+          data-title="Landscaping" 
+          data-price="1500">
+          Add to Selection
+        </button>
+      </div>
+
+      <!-- Garden Maintenance -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+        <img src="media/Garden-maintenance.jpg" alt="Garden Maintenance" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Garden Maintenance</h3>
+        <p class="text-gray-600 mb-4">Learn techniques for maintaining gardens and keeping them thriving year-round.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">6 weeks</span>
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm ml-2">R750</span>
+        </div>
+        <button class="course-btn w-full bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="garden-maintenance" 
+          data-title="Garden Maintenance" 
+          data-price="750">
+          Add to Selection
+        </button>
+      </div>
+
+      <!-- First Aid -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+        <img src="media/first-aid.jpg" alt="First Aid" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">First Aid</h3>
+        <p class="text-gray-600 mb-4">Learn essential life-saving techniques and emergency response skills.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">6 months</span>
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm ml-2">R1,500</span>
+        </div>
+        <button class="course-btn w-full bg-purple-900 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="first-aid" 
+          data-title="First Aid" 
+          data-price="1500">
+          Add to Selection
+        </button>
+      </div>
+
+      <!-- Sewing -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+        <img src="media/sewing.webp" alt="Sewing" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Sewing</h3>
+        <p class="text-gray-600 mb-4">Develop skills to design, alter, and repair clothing and textiles.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">6 weeks</span>
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm ml-2">R750</span>
+        </div>
+        <button class="course-btn w-full bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="sewing" 
+          data-title="Sewing" 
+          data-price="750">
+          Add to Selection
+        </button>
+      </div>
+
+      <!-- Life Skills -->
+      <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow md:col-start-2 md:col-end-3">
+        <img src="media/Life Skills.jpg" alt="Life Skills" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Life Skills</h3>
+        <p class="text-gray-600 mb-4">Build essential personal and professional skills to thrive in everyday life.</p>
+        <div class="mb-4">
+          <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">6 months</span>
+          <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm ml-2">R1,500</span>
+        </div>
+        <button class="course-btn w-full bg-purple-900 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition-colors" 
+          data-course-id="life-skills" 
+          data-title="Life Skills" 
+          data-price="1500">
+          Add to Selection
+        </button>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-8 mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-gray-500">© 2024 Empowering The Nation. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const courseButtons = document.querySelectorAll(".course-btn");
+  const courseSummary = document.getElementById("course-summary");
+  const selectedCoursesList = document.getElementById("selected-courses-list");
+  const subtotalAmount = document.getElementById("subtotal-amount");
+  const discountRow = document.getElementById("discount-row");
+  const discountAmount = document.getElementById("discount-amount");
+  const totalAmount = document.getElementById("total-amount");
+  const cartCount = document.getElementById("cart-count");
+
+  let selectedCourses = [];
+  let subtotal = 0;
+
+  function updateSummary() {
+    let discount = 0;
+
+    if (selectedCourses.length === 2) {
+      discount = subtotal * 0.05;  // 5%
+    } else if (selectedCourses.length === 3) {
+      discount = subtotal * 0.10;  // 10%
+    } else if (selectedCourses.length > 3) {
+      discount = subtotal * 0.15;  // 15%
+    }
+
+    subtotalAmount.textContent = `R${subtotal}`;
+    if (discount > 0) {
+      discountRow.style.display = "flex";
+      discountAmount.textContent = `-R${discount}`;
+    } else {
+      discountRow.style.display = "none";
+    }
+    totalAmount.textContent = `R${subtotal - discount}`;
+    cartCount.textContent = selectedCourses.length;
+
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+    localStorage.setItem("subtotal", subtotal);
+    localStorage.setItem("discount", discount);
+    localStorage.setItem("total", subtotal - discount);
+  }
+
+  courseButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const courseId = button.dataset.courseId;
+      const title = button.dataset.title;
+      const price = parseInt(button.dataset.price);
+
+      if (!selectedCourses.some(c => c.id === courseId)) {
+        selectedCourses.push({ id: courseId, title, price });
+
+        const courseItem = document.createElement("div");
+        courseItem.textContent = `${title} - R${price}`;
+        selectedCoursesList.appendChild(courseItem);
+
+        subtotal += price;
+        courseSummary.classList.remove("hidden");
+
+        updateSummary();
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
